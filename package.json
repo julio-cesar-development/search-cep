@@ -1,0 +1,33 @@
+{
+  "name": "search-cep-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "gulp": "gulp",
+    "dev": "gulp serve",
+    "postinstall": "gulp mkdir && gulp minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "browser-sync": "2.23.1",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "4.0.0",
+    "gulp-clean": "0.4.0",
+    "gulp-clean-css": "4.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-cssnano": "2.1.3",
+    "gulp-file-include": "2.0.1",
+    "gulp-imagemin": "4.1.0",
+    "gulp-minify": "3.1.0",
+    "gulp-sass": "3.1.0",
+    "gulp-uglify": "3.0.1",
+    "gulp-uncss": "1.0.6",
+    "jquery": "1.9.1",
+    "node-sass": "4.7.2",
+    "shelljs": "^0.8.3"
+  }
+}

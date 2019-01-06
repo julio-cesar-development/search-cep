@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Busca CEP</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+  </head>
+  <body class="flex flex-center flex-column">
+    <h1>Busca CEP</h1>
+    <hr>
+    <div class="wrapper flex flex-center flex-column">
+      <div class="">
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="name" name="name" placeholder="Nome" autocomplete="off">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="tel" id="phone" name="phone" placeholder="Telefone" autocomplete="off" pattern="\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="cep" name="cep" placeholder="CEP" autocomplete="off" maxlength="9">
+          <span>O endereços serão completados a partir do CEP automaticamente</span>
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="address" name="address" placeholder="Endereço" autocomplete="off" disabled="disabled">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="district" name="district" placeholder="Bairro" autocomplete="off" disabled="disabled">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="city" name="city" placeholder="Cidade" autocomplete="off" disabled="disabled">
+        </div>
+        <div class="row flex flex-center flex-row">
+          <input type="text" id="state" name="state" placeholder="Estado" autocomplete="off" disabled="disabled">
+        </div>
+      </div>
+    </div>
+    <div class="message"></div>
+  <script src="dist/js/main-min.js"></script>
+  </body>
+</html>

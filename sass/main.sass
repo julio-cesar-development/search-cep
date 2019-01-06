@@ -1,0 +1,91 @@
+$white-color: #fff
+$black-color: #000
+
+@mixin setBorder($color, $size, $type: solid)
+	border: $size $type $color
+
+.flex
+  display: flex
+
+.flex-center
+  justify-content: center
+  align-items: center
+
+.flex-row
+  flex-direction: row
+
+.flex-column
+  flex-direction: column
+
+body
+  font-family: 'calibri', 'sans-serif'
+  background-color: $white-color
+  color: $black-color
+
+  .message
+    width: 120px
+    height: 20px
+    background-color: rgba(9, 113, 240, .5)
+    color: $black-color
+    font-weight: bold
+    margin-top: 20px
+    padding: 15px
+    border-radius: .75rem
+    display: none
+    @include setBorder(1px, rgba(0, 0, 0, .75))
+    
+  h1
+    margin: 5px
+
+  hr
+    height: 2px
+    background-color: #f22
+    width: 60vw
+    margin-bottom: 10px
+
+  .wrapper
+    min-height: 300px
+    height: auto
+    width: 100vw
+
+    &>div
+      width: 80vw
+      max-width: 600px
+
+      .row
+        width: 100%
+        position: relative
+
+        input
+          
+          box-sizing: border-box
+          width: 50%
+          padding: 10px
+          outline: none
+          border-radius: .75rem
+          @include setBorder(1px, rgba(0, 0, 0, .5))
+          margin: 2.5px 0 2.5px 0
+
+          &:disabled
+            background-color: #bbb
+            cursor: not-allowed
+
+        span
+          position: absolute
+          left: 80%
+          top: 0
+          width: 20%
+          font-size: 11px
+          color: #f22
+
+@media screen and (max-width: 648px)
+  body
+    .wrapper
+      &>div
+        .row
+          span
+            display: none
+          
+          input
+            width: 80%
+          

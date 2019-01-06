@@ -1,0 +1,82 @@
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+body {
+  font-family: 'calibri', 'sans-serif';
+  background-color: #fff;
+  color: #000; }
+  body .message {
+    width: 120px;
+    height: 20px;
+    background-color: rgba(9, 113, 240, 0.5);
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: .75rem;
+    display: none;
+    border: rgba(0, 0, 0, 0.75) solid 1px; }
+  body h1 {
+    margin: 5px; }
+  body hr {
+    height: 2px;
+    background-color: #f22;
+    width: 60vw;
+    margin-bottom: 10px; }
+  body .wrapper {
+    min-height: 300px;
+    height: auto;
+    width: 100vw; }
+    body .wrapper > div {
+      width: 80vw;
+      max-width: 600px; }
+      body .wrapper > div .row {
+        width: 100%;
+        position: relative; }
+        body .wrapper > div .row input {
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          width: 50%;
+          padding: 10px;
+          outline: none;
+          border-radius: .75rem;
+          border: rgba(0, 0, 0, 0.5) solid 1px;
+          margin: 2.5px 0 2.5px 0; }
+          body .wrapper > div .row input:disabled {
+            background-color: #bbb;
+            cursor: not-allowed; }
+        body .wrapper > div .row span {
+          position: absolute;
+          left: 80%;
+          top: 0;
+          width: 20%;
+          font-size: 11px;
+          color: #f22; }
+
+@media screen and (max-width: 648px) {
+  body .wrapper > div .row span {
+    display: none; }
+  body .wrapper > div .row input {
+    width: 80%; } }
