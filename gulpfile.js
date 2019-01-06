@@ -1,8 +1,9 @@
+// variables
 const
-	gulp 	= 	require('gulp'),
-	sass 	= 	require('gulp-sass'),
+	gulp = require('gulp'),
+	sass = require('gulp-sass'),
 	browserSync = require('browser-sync'),
-	autoprefixer 		= require('gulp-autoprefixer'),
+	autoprefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
 	minify = require('gulp-minify'),
 	shell = require('shelljs');
@@ -14,15 +15,18 @@ const watchingBrowser = () => {
 	gulp.watch('./*.html').on('change', browserSync.reload);
 }
 const watchingFiles = () => {
-	gulp.watch('./sass/*.sass', ['sass']);
-	gulp.watch('./css/*.css', ['minify-css']);
+	gulp.watch('./sass/*.sass', ['sass', 'minify-css']);
 	gulp.watch('./js/*.js', ['minify-js']);
 }
 const watching = () => {
 	watchingFiles();
 	watchingBrowser();
 }
+const minifYing = () => {
+	shell.exec('npm run gulp minify-css && npm run gulp minify-js')
+}
 
+// tasks
 gulp.task('minify-css', () => {
 	gulp.src('./css/*.css')
 		.pipe(cleanCSS({compatibility: 'ie8'}))
@@ -34,17 +38,12 @@ gulp.task('minify-js', () => {
 		.pipe(gulp.dest('./dist/js/'))
 });
 
-const minifYing = () => {
-	shell.exec('gulp minify-css && gulp minify-js')
-}
-
 gulp.task('sass', () => {
 	gulp.src('./sass/*.sass')
 		.pipe(sass())
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('./css/'));
 });
-
 gulp.task('serve', ['sass'], () => {
 	browserSync.init({
 		server: {
@@ -53,13 +52,12 @@ gulp.task('serve', ['sass'], () => {
 	})
 	watching()
 });
-
 gulp.task('mkdir', () => {
 	shell.exec('mkdir dist')
 });
-
 gulp.task('minify', () => {
 	minifYing();
 });
 
+// task default
 gulp.task('default', ['serve']);

@@ -2,16 +2,24 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Busca CEP</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/img/icons/icon-512x512.png">
     <link rel="stylesheet" href="dist/css/main.css">
+    <meta property="og:url" content="https://search-cep-js.netlify.com">
+    <meta property="og:title" content="CEP search project">
+    <meta property="og:image" content="https://search-cep-js.netlify.com">
+    <meta property="og:site_name" content="Search CEP project">
+    <meta property="og:description" content="This is a simple CEP search project">
+    <title>Busca CEP</title>
   </head>
   <body class="flex flex-center flex-column">
     <h1>Busca CEP</h1>
     <hr>
-    <div class="wrapper flex flex-center flex-column">
-      <div class="">
+    <div class="container flex flex-center flex-column">
+      <div class="wrapper">
         <div class="row flex flex-center flex-row">
           <input type="text" id="name" name="name" placeholder="Nome" autocomplete="off">
         </div>
@@ -41,5 +49,12 @@
     </div>
     <div class="message"></div>
   <script src="dist/js/main-min.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw_cached_site-min.js')
+      .then(reg => console.info('registered sw', reg))
+      .catch(err => console.error('error registering sw', err));
+  }
+  </script>
   </body>
 </html>

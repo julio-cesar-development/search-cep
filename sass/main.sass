@@ -32,6 +32,8 @@ body
     padding: 15px
     border-radius: .75rem
     display: none
+    text-align: center
+    font-size: 14px
     @include setBorder(1px, rgba(0, 0, 0, .75))
     
   h1
@@ -43,12 +45,12 @@ body
     width: 60vw
     margin-bottom: 10px
 
-  .wrapper
+  .container
     min-height: 300px
     height: auto
     width: 100vw
 
-    &>div
+    .wrapper
       width: 80vw
       max-width: 600px
 
@@ -80,8 +82,8 @@ body
 
 @media screen and (max-width: 648px)
   body
-    .wrapper
-      &>div
+    .container
+      .wrapper
         .row
           span
             display: none

@@ -37,6 +37,8 @@ body {
     padding: 15px;
     border-radius: .75rem;
     display: none;
+    text-align: center;
+    font-size: 14px;
     border: rgba(0, 0, 0, 0.75) solid 1px; }
   body h1 {
     margin: 5px; }
@@ -45,17 +47,17 @@ body {
     background-color: #f22;
     width: 60vw;
     margin-bottom: 10px; }
-  body .wrapper {
+  body .container {
     min-height: 300px;
     height: auto;
     width: 100vw; }
-    body .wrapper > div {
+    body .container .wrapper {
       width: 80vw;
       max-width: 600px; }
-      body .wrapper > div .row {
+      body .container .wrapper .row {
         width: 100%;
         position: relative; }
-        body .wrapper > div .row input {
+        body .container .wrapper .row input {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
           width: 50%;
@@ -64,10 +66,10 @@ body {
           border-radius: .75rem;
           border: rgba(0, 0, 0, 0.5) solid 1px;
           margin: 2.5px 0 2.5px 0; }
-          body .wrapper > div .row input:disabled {
+          body .container .wrapper .row input:disabled {
             background-color: #bbb;
             cursor: not-allowed; }
-        body .wrapper > div .row span {
+        body .container .wrapper .row span {
           position: absolute;
           left: 80%;
           top: 0;
@@ -76,7 +78,7 @@ body {
           color: #f22; }
 
 @media screen and (max-width: 648px) {
-  body .wrapper > div .row span {
+  body .container .wrapper .row span {
     display: none; }
-  body .wrapper > div .row input {
+  body .container .wrapper .row input {
     width: 80%; } }

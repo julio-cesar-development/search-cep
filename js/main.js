@@ -1,6 +1,8 @@
 window.onload = () => {
   // variables
-  const $ = (ele) => { return document.querySelector(ele); }
+  const $ = (ele) => {
+    return document.querySelector(ele);
+  }
 
   const cepField = $('input[name="cep"]');
   const phoneField = $('input[name="phone"]');
@@ -24,16 +26,16 @@ window.onload = () => {
   const manageTypingPhone = (e) => {
     let phoneValue = phoneField.value.replace(/[^\d]+/g, '');
     if(phoneValue.length > 0){
-      phoneValue = `(${phoneValue.substring(0)}`
+      phoneValue = `(${phoneValue.substring(0)}`;
     }
     if(phoneValue.length > 3){
-      phoneValue = `${phoneValue.substring(0,3)})${phoneValue.substring(3)}`
+      phoneValue = `${phoneValue.substring(0,3)})${phoneValue.substring(3)}`;
     }
     if(phoneValue.length > 8){
       if(phoneValue.length <= 12){
-        phoneValue = `${phoneValue.substring(0,8)}-${phoneValue.substring(8,12)}`
+        phoneValue = `${phoneValue.substring(0,8)}-${phoneValue.substring(8,12)}`;
       }else {
-        phoneValue = `${phoneValue.substring(0,9)}-${phoneValue.substring(9,13)}`
+        phoneValue = `${phoneValue.substring(0,9)}-${phoneValue.substring(9,13)}`;
       }
     }
     e.target.value = phoneValue;
